@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+rsconnect/
+generate_data.R
+*.Rproj
+.Rhistory
+.RData
