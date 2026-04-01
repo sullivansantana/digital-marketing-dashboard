@@ -64,19 +64,6 @@ Each KPI card shows the **current period value** alongside a **▲/▼ delta vs.
 
 ---
 
-## Project Structure
-
-```
-📁 project/
-├── marketing_dashboard.R        # Main Shiny app (UI + Server)
-├── workflow_marketing_dashboard.Rmd  # Step-by-step documented workflow
-└── README.md
-```
-
-> The entire app lives in a single `marketing_dashboard.R` file — no separate `ui.R` / `server.R` split needed.
-
----
-
 ## How It Works
 
 ### Channels & Data Sources
