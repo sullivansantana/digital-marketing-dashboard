@@ -21,8 +21,6 @@ library(DT)
 library(htmltools)
 
 # ── 2. Datos (cargados desde .rds, NO generados en runtime) ──
-#   Si el archivo no existe, lanzar un error claro en lugar
-#   de colgar la app silenciosamente.
 if (!file.exists("marketing_data.rds")) {
   stop("Archivo marketing_data.rds no encontrado.
        Ejecuta generate_data.R en tu máquina local y
@@ -91,7 +89,7 @@ kpi_card <- function(title, value, delta, delta_prefix = "", delta_suffix = "") 
 ui <- dashboardPage(
   skin = "purple",
 
-  # Header — sin requests externos (imagen removida)
+  # Header 
   dashboardHeader(
     title = tags$span(
       tags$b("improvado", style = "font-size:18px; color:#fff;")
@@ -199,7 +197,7 @@ ui <- dashboardPage(
           selectInput("sel_campaign", "Campaign",
                       c("All", campaigns),
                       width = "200px"),
-          # label = "" evita el warning de NULL label en shinyapps
+          # label 
           dateRangeInput("sel_dates", label = "",
                          start = "2023-01-01", end = "2023-12-31",
                          min   = "2022-01-01", max = "2023-12-31",
@@ -253,7 +251,7 @@ server <- function(input, output, session) {
 
   # Datos del período seleccionado
   filtered <- reactive({
-    req(input$sel_dates)   # <- evita errores si los inputs no están listos
+    req(input$sel_dates)   
     d <- marketing_data |>
       filter(date >= input$sel_dates[1], date <= input$sel_dates[2])
     if (input$sel_source   != "All") d <- filter(d, data_source == input$sel_source)
