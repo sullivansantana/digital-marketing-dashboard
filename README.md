@@ -2,7 +2,7 @@
 
 > Interactive marketing analytics dashboard built with R Shiny, inspired by Improvado's Executive Summary view.
 
-![Dashboard Preview](dashboard-screenshot.png)
+Interactive marketing analytics dashboard built with R Shiny, inspired by Improvado's Executive Summary view.
 
 ---
 
